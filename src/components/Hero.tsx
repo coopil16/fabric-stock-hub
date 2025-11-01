@@ -1,7 +1,23 @@
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.png";
 
-const Hero = () => {
+interface HeroProps {
+  loginUrl?: string;
+  registerUrl?: string;
+  marketplaceUrl?: string;
+  onLoginClick?: () => void;
+  onRegisterClick?: () => void;
+  onMarketplaceClick?: () => void;
+}
+
+const Hero = ({ 
+  loginUrl = "/login",
+  registerUrl = "/register", 
+  marketplaceUrl = "/marketplace",
+  onLoginClick,
+  onRegisterClick,
+  onMarketplaceClick
+}: HeroProps) => {
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Background Image */}
@@ -16,14 +32,32 @@ const Hero = () => {
       {/* Navigation */}
       <nav className="relative z-10 flex justify-center pt-4 sm:pt-8 px-4">
         <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-          <Button variant="glass" size="lg" className="min-w-[120px] sm:min-w-[140px] text-sm sm:text-base">
-            Login
+          <Button 
+            variant="glass" 
+            size="lg" 
+            className="min-w-[120px] sm:min-w-[140px] text-sm sm:text-base"
+            onClick={onLoginClick}
+            asChild={!onLoginClick}
+          >
+            {onLoginClick ? "Login" : <a href={loginUrl}>Login</a>}
           </Button>
-          <Button variant="glass" size="lg" className="min-w-[120px] sm:min-w-[140px] text-sm sm:text-base">
-            Register
+          <Button 
+            variant="glass" 
+            size="lg" 
+            className="min-w-[120px] sm:min-w-[140px] text-sm sm:text-base"
+            onClick={onRegisterClick}
+            asChild={!onRegisterClick}
+          >
+            {onRegisterClick ? "Register" : <a href={registerUrl}>Register</a>}
           </Button>
-          <Button variant="hero" size="lg" className="min-w-[150px] sm:min-w-[180px] text-sm sm:text-base">
-            Go to Marketplace
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="min-w-[150px] sm:min-w-[180px] text-sm sm:text-base"
+            onClick={onMarketplaceClick}
+            asChild={!onMarketplaceClick}
+          >
+            {onMarketplaceClick ? "Go to Marketplace" : <a href={marketplaceUrl}>Go to Marketplace</a>}
           </Button>
         </div>
       </nav>
