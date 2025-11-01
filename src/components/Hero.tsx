@@ -14,50 +14,37 @@ const Hero = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-10 flex justify-center pt-8 px-4">
-        <div className="flex gap-4">
-          <Button variant="glass" size="lg" className="min-w-[140px]">
+      <nav className="relative z-10 flex justify-center pt-4 sm:pt-8 px-4">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <Button variant="glass" size="lg" className="min-w-[120px] sm:min-w-[140px] text-sm sm:text-base">
             Login
           </Button>
-          <Button variant="glass" size="lg" className="min-w-[140px]">
+          <Button variant="glass" size="lg" className="min-w-[120px] sm:min-w-[140px] text-sm sm:text-base">
             Register
           </Button>
-          <Button variant="hero" size="lg" className="min-w-[180px]">
+          <Button variant="hero" size="lg" className="min-w-[150px] sm:min-w-[180px] text-sm sm:text-base">
             Go to Marketplace
           </Button>
         </div>
       </nav>
 
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-start justify-center min-h-[calc(100vh-120px)] px-8 md:px-16 lg:px-24">
+      <div className="relative z-10 flex flex-col items-start justify-center min-h-[calc(100vh-100px)] px-4 sm:px-8 md:px-16 lg:px-24">
         <div className="max-w-3xl">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
             Fabric<span className="text-[#2596be]">Stock</span>Hub
           </h1>
           
-          <div className="space-y-4">
-            <h2 className="text-2xl md:text-3xl font-semibold text-white/90">
+          <div className="space-y-3 sm:space-y-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white/90">
               Welcome to the Future of Fabric Logistics
             </h2>
             
-            <p className="text-lg md:text-xl text-[#D9D9D9] leading-relaxed max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl text-[#D9D9D9] leading-relaxed max-w-2xl">
               FSHub is your comprehensive platform for managing fabric inventory, 
               tracking logistics, and coordinating transportation and warehousing operations. 
               Streamline your supply chain with real-time visibility and intelligent management tools.
             </p>
-            
-            <div className="flex flex-wrap gap-4 pt-6">
-              <Button size="lg" variant="hero" className="text-lg px-8 py-6 h-auto">
-                Get Started
-              </Button>
-              <Button 
-                size="lg" 
-                variant="glass" 
-                className="text-lg px-8 py-6 h-auto"
-              >
-                Learn More
-              </Button>
-            </div>
           </div>
         </div>
       </div>
